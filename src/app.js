@@ -5,16 +5,21 @@ const sequelize = require('./config/database');
 
 const app = express();
 app.use(express.json());
+//IMPORTAR MODELS
+const Usuario = require('./models/usuario');
+const Produto = require('./models/produto');
+const Pedido = require('./models/pedido');
+//ATIVAR RELACIONAMENTOS
+ Usuario.associate({ Pedido });
+ Produto.associate({ Pedido });
+ Pedido.associate({ Usuario, Produto });
 
-//ROTAS DO USUÁRIO
+
+//ROTAS
 const usuarioRoutes = require('./routes/usuarioRoutes');
 app.use(usuarioRoutes);
-
-//ROTAS DO PRODUTO
 const produtoRoutes = require('./routes/produtoRoutes');
 app.use(produtoRoutes);
-
-//ROTAS PEDIDO
 const pedidoRoutes = require('./routes/pedidoRoutes');
 app.use(pedidoRoutes);
 

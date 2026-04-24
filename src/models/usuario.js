@@ -21,4 +21,9 @@ const Usuario = sequelize.define('Usuario' ,{
         allowNull: false
     }
 });
+Usuario.associate = (models) => {
+    Usuario.hasMany(models.Pedido, {
+        foreignKey: 'usuario_id'
+    });
+};
 module.exports = Usuario;
