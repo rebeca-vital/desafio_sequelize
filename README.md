@@ -1,2 +1,20 @@
-# desafio_sequelize
-REST API com Node.Js, Express, Sequelize e MySQL, com CRUD completo de usuário
+# Desafio Sequelize
+API REST desenvolvida com Node.js, Express, Sequelize e MySQL.
+
+## Funcionalidades
+-CRUD de Usuários
+-CRUD de Produtos
+-CRUD de Pedidos
+
+## Tecnologias
+-Node.js
+-Express
+-Sequelize
+-MySQL
+
+## Como rodar
+npm install
+npm run dev
+
+## Teste
+Testado via Postman.
