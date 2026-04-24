@@ -6,6 +6,11 @@ require('dotenv').config();
 const app = express();
 app.use(express.json());
 
+//ROTAS DO USUÁRIO
+const usuarioRoutes = require('./routes/usuarioRoutes');
+app.use(usuarioRoutes);
+
+//TESTE DE CONEXÃO COM BANCO
 async function testConexao() {
   try{
     await sequelize.authenticate();
@@ -16,6 +21,8 @@ async function testConexao() {
 }
 testConexao();
 
+//INICIAR SERVIDOR
 app.listen(process.env.PORT, () =>{
     console.log(`Servidor rodando na porta ${process.env.PORT}`);
 });
+
